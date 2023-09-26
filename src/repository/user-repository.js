@@ -7,7 +7,7 @@ class UserRepository {
             return user;
             
         } catch (error) {
-            console.log('Something wrong at repository layer');
+            console.log('Something wrong on repository layer');
             throw error;
         }
     }
@@ -22,7 +22,19 @@ class UserRepository {
             return true;
             
         } catch (error) {
-            console.log('Something wrong at repository layer');
+            console.log('Something wrong on repository layer');
+            throw error;
+        }
+    }
+
+    async getById(userId){
+        try {
+            const user = await User.findByPk(userId, {
+                attributes : [ 'email','id']                          // we try to fetch specific attributes
+            });
+            return user;
+        } catch (error) {
+            console.log('Something wrong on repository layer');
             throw error;
         }
     }
