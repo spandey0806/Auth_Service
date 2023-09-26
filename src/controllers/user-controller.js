@@ -27,6 +27,30 @@ const create = async (req,res) => {
     }
 }
 
+
+const signIn = async (req,res) => {
+    try {
+        console.log("Scontroller layer sign in")
+        const response = await userService.signIn( req.body.email , req.body.password);
+        console.log("response",response);
+        return  res.status(200).json({
+            message :"Successfully signed in",
+            success:true,
+            data : response,
+            err : {}
+         });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message : "Something went worng",
+            data : [],
+            success : false,
+            err :error
+        })
+    }
+}
+
 module.exports = {
-    create
+    create,
+    signIn
 }
