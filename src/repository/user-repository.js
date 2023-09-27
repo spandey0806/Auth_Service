@@ -41,7 +41,7 @@ class UserRepository {
 
     async getByEmail(userEmail){
         try {
-            console.log("yha tk aye h")
+         
             const user = await User.findOne({ where :{
                 email :userEmail
             }});
