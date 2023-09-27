@@ -19,15 +19,7 @@ const prepareAndStartServer = ()=>{
         if(process.env.DB_SYNC){
             db.sequelize.sync({alter: true});
         }
-
-     
-         
-        //  const service = new UserService();
-        // //  const newtoken = service.createToken({email :"shubham@admin.com" , id :1});
-        // //  console.log('new token is---',newtoken);
-        // const token ="eyJhbGciOiJIUzI1NiIsvvInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNodWJoYW1AYWRtaW4uY29tIiwiaWQiOjEsImlhdCI6MTY5NTc0Mzc5OSwiZXhwIjoxNjk1NzQ3Mzk5fQ.qsQP-iH-Mi05dCUmZSiEOcnCZ-j1jOpR_5RqWSfSiJ8"
-        //  const response= service.verifyToken(token);
-        //  console.log(response);
+  
     });
 }
 
